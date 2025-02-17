@@ -1,0 +1,123 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+/*=================================================================HEAD==========================================================================================*/
+header {
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgb(252, 164, 0), rgb(255, 255, 255));
+  border-top: 4px solid darkgray;
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(143, 0, 0);
+}
+nav ul {
+  width: 100vw;
+  height: 10vh;
+  list-style: none;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: Orbitron, sans-serif;
+}
+
+nav ul li {
+  color: black;
+  transition: all 0.25s ease;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+}
+
+nav ul li:hover {
+  color: #f9f9f9;
+  transform: scale(1.1);
+}
+
+/*=================================================================MAIN==========================================================================================*/
+main {
+  position: relative;
+  min-height: 50vh;
+  min-width: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+main aside.rightpic {
+  position: absolute;
+  top: auto;
+  left: 45rem;
+  width: 100vw;
+  height: 100vw;
+  background-image: url("../images/IMG_20210707_131013.jpg");
+  background-size: cover;
+  background-blend-mode: exclusion;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/*=================================================================FOOTER==========================================================================================*/
+footer {
+  min-height: 13vh;
+  color: rgb(143, 0, 0);
+  font-size: 2rem;
+  font-family: Orbitron, sans-serif;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+#footer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(252, 164, 0));
+  border-bottom: 4px solid darkgray;
+}
+.footer-container {
+  width: 100vw;
+  display: flex;
+  height: auto;
+  margin-top: -2rem;
+  align-items: center;
+  justify-content: center;
+}
+.fa-brands {
+  margin: 1rem 1rem 1rem 1rem;
+  font-size: 3rem;
+  text-decoration: none;
+  color: rgb(143, 0, 0);
+  transition: transform 0.25s;
+}
+.fa-brands:hover {
+  transform: translateY(-1rem);
+  -webkit-transform: translateY(-1rem);
+  -moz-transform: translateY(-1rem);
+  -ms-transform: translateY(-1rem);
+  -o-transform: translateY(-1rem);
+}
+
+.copywrite {
+  margin-top: 1rem;
+  color: white;
+}
