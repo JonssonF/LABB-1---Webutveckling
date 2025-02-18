@@ -470,3 +470,67 @@ footer {
     font-size: 1.4rem;
   }
 }
+
+#hangman-game {
+  display: none;
+  position: fixed;
+  min-height: 15rem;
+  min-width: 35rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.555);
+  padding: 20px;
+  border: 6px solid black;
+  text-align: center;
+  opacity: 1;
+  z-index: 100;
+}
+
+#hangman-btn {
+  opacity: 0;
+  transition: all opacity 0.3s;
+}
+#hangman-btn:hover {
+  opacity: 1;
+}
+
+.input-container {
+  border-radius: 5px; /* Rundade hörn */
+  padding: 10px; /* Utrymme inuti rutan */
+  margin-bottom: 10px; /* Utrymme under rutan */
+  display: inline-block; /* Gör rutan inline så att den kan centreras om det behövs */
+  font-family: Orbitron, sans-serif;
+  font-weight: 500;
+}
+
+input[type="text"] {
+  width: 50px; /* Gör fältet smalare för en bokstav */
+  padding: 5px; /* Lägg till padding för bättre utrymme */
+  border: 1px solid #333; /* Lägger till en synlig kant på inputfältet */
+  border-radius: 3px; /* Rundade hörn på inputfältet */
+  font-size: 16px; /* Större text */
+  margin-top: 5px; /* Utrymme ovanför inputfältet */
+  background-color: #f9f9f9; /* Bakgrundsfärg på inputfältet */
+}
+
+input[type="text"]:focus {
+  outline: none; /* Ta bort standard kontur */
+  border-color: #007bff; /* Ändra kantfärg när inputfältet är i fokus */
+}
+
+.styled-button {
+  background-color: white; /* Bakgrundsfärg */
+  font-family: Orbitron, sans-serif;
+  color: rgb(143, 0, 0); /* Textfärg */
+  font-size: 25px !important;
+  border-radius: 5px; /* Rundade hörn */
+  padding: 10px 15px; /* Utrymme inuti knappen */
+  font-size: 16px; /* Textstorlek */
+  cursor: pointer; /* Ändra muspekaren när man hovrar över knappen */
+  transition: background-color 0.3s; /* Mjuk övergång för bakgrundsfärgen */
+}
+
+.styled-button:hover {
+  background-color: rgb(212, 19, 19);
+}
