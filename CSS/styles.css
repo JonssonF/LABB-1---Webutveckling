@@ -3,9 +3,19 @@
   padding: 0px;
   border: 0px;
 }
+/*=================================================================BODY==========================================================================================*/
+body {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../IMG/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 /*=================================================================HEAD==========================================================================================*/
 header {
-  min-height: 10vh;
+  min-height: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +61,7 @@ nav ul li:hover {
 /*=================================================================MAIN==========================================================================================*/
 main {
   position: relative;
-  min-height: 50vh;
+  min-height: 64vh;
   min-width: 50vh;
   display: flex;
   flex-wrap: wrap;
@@ -60,23 +70,9 @@ main {
   align-items: center;
 }
 
-main aside.rightpic {
-  position: absolute;
-  top: auto;
-  left: 45rem;
-  width: 100vw;
-  height: 100vw;
-  background-image: url("../images/IMG_20210707_131013.jpg");
-  background-size: cover;
-  background-blend-mode: exclusion;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 0;
-}
-
 /*=================================================================FOOTER==========================================================================================*/
 footer {
-  min-height: 13vh;
+  min-height: 15vh;
   color: rgb(143, 0, 0);
   font-size: 2rem;
   font-family: Orbitron, sans-serif;
