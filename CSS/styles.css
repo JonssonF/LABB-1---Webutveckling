@@ -53,10 +53,48 @@ nav ul li {
   -o-transition: all 0.25s ease;
 }
 
+nav ul li a.focused {
+  font-size: 1.7rem;
+  text-decoration: underline;
+  font-weight: 600;
+  color: #eeff00;
+}
+
 nav ul li:hover {
   color: #f9f9f9;
-  transform: scale(1.1);
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
 }
+
+.current-page {
+  position: absolute;
+  top: 9vh;
+  left: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffcc00;
+  font-family: Orbitron, sans-serif;
+  text-align: center;
+}
+
+.current-page img {
+  display: block;
+  margin: 0 auto 0;
+  max-width: 50px;
+  height: auto;
+}
+
+#current-page {
+  font-size: 1.5rem;
+}
+
+.current-page:hover #current-page {
+  color: #eeff00;
+}
+/*=================================================================ASIDE==========================================================================================*/
 
 /*=================================================================MAIN==========================================================================================*/
 main {
@@ -69,27 +107,54 @@ main {
   justify-content: center;
   align-items: center;
 }
-/*=================================================================WELCOME SECTION==========================================================================================*/
-#welcome {
-  max-width: 800px;
+
+/*=================================================================BOX SECTION==========================================================================================*/
+#boxText {
+  max-width: 65rem;
   text-align: center;
   background: rgba(255, 255, 255, 0.8);
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   font-family: Orbitron, sans-serif;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
-
-#welcome h1 {
+#boxText img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  transition: opacity 0.3s ease-in-out;
+}
+#boxText h1,
+h2 {
   font-size: 2.5rem;
   color: rgb(143, 0, 0);
   margin-bottom: 1rem;
 }
 
-#welcome p {
+#boxText ul {
+  list-style: none;
+  display: grid;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#boxText p {
   font-size: 1.2rem;
   color: black;
   margin-bottom: 0.8rem;
+}
+#boxText:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+#boxText img:hover {
+  opacity: 0.8;
 }
 
 /*=================================================================FOOTER==========================================================================================*/
@@ -203,4 +268,105 @@ footer {
 .copywrite {
   margin-top: 1rem;
   color: white;
+}
+
+/*=================================================================RESPONSIVE MEDIA QUERIES==========================================================================================*/
+@media screen and (max-width: 1024px) {
+  /* Header */
+  header {
+    min-height: 12vh;
+  }
+
+  nav ul {
+    font-size: 1.4rem;
+    gap: 3rem;
+  }
+
+  /* Box Text */
+  #boxText {
+    max-width: 80%;
+    padding: 1.5rem;
+  }
+
+  #boxText h1,
+  #boxText h2 {
+    font-size: 2.2rem;
+  }
+
+  #boxText p {
+    font-size: 1.1rem;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 1.8rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Header */
+  header {
+    min-height: 10vh;
+  }
+
+  nav ul {
+    font-size: 1.2rem;
+    gap: 2rem;
+  }
+
+  /* Box Text */
+  #boxText {
+    max-width: 90%;
+    padding: 1rem;
+  }
+
+  #boxText h1,
+  #boxText h2 {
+    font-size: 2rem;
+  }
+
+  #boxText p {
+    font-size: 1rem;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Header */
+  header {
+    min-height: 8vh;
+  }
+
+  nav ul {
+    font-size: 1rem;
+    gap: 1.5rem;
+  }
+
+  /* Box Text */
+  #boxText {
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+
+  #boxText h1,
+  #boxText h2 {
+    font-size: 1.8rem;
+  }
+
+  #boxText p {
+    font-size: 0.9rem;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 1.4rem;
+  }
 }
