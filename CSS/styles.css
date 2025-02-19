@@ -125,6 +125,19 @@ main #cv {
   cursor: pointer;
   display: flex;
   justify-content: row;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.cv {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Två kolumner */
+  gap: 1rem;
+  justify-items: center;
+  max-width: 500px; /* Justera bredden efter behov */
+  margin: 0 auto;
 }
 
 .project a {
