@@ -63,6 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (wrongGuesses >= maxWrong) {
       message.textContent = "Game Over!";
       wordDisplay.textContent = word; // Visa hela ordet
+      gameOver = true;
+      quitGame();
     }
   }
 
@@ -70,6 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
   }
 
+  function quitGame() {
+    hangmanGame.style.display = "none";
+  }
   // Stäng spelet
   window.closeGame = function () {
     hangmanGame.style.display = "none";

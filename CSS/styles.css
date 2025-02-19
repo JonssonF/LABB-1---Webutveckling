@@ -280,6 +280,7 @@ footer {
 .footer-container {
   width: 100vw;
   display: flex;
+  flex-wrap: wrap;
   height: auto;
   margin-top: -2rem;
   align-items: center;
