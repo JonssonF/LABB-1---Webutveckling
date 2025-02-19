@@ -280,6 +280,7 @@ footer {
   font-weight: 500;
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 #footer {
   position: absolute;
@@ -290,15 +291,21 @@ footer {
   height: 20vh;
   background-image: linear-gradient(#de9829, rgb(255, 255, 255));
   border-bottom: 4px solid white;
+  width: 100%;
 }
 .footer-container {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   height: auto;
   margin-top: -2rem;
-  align-items: center;
-  justify-content: center;
+}
+.icon-container {
+  margin: 0.5rem; /* Lite avstånd mellan ikonerna */
+  flex: 1 1 60px; /* Gör ikonerna responsiva */
+  max-width: 60px; /* Sätt en max-bredd för ikonerna */
 }
 .fa-brands {
   margin: 1rem 1rem 1rem 1rem;
@@ -327,11 +334,6 @@ footer {
   }
 }
 
-.icon-container {
-  position: relative;
-  display: inline-block;
-}
-
 .tooltip {
   /*Small tooltip when hoveringg above social media icons*/
   position: absolute;
@@ -349,7 +351,7 @@ footer {
 }
 
 .tooltip img {
-  width: 10rem; /* Standardstorlek */
+  width: 10rem;
   height: 10rem;
   object-fit: cover;
   border-radius: 5px;
@@ -386,106 +388,31 @@ footer {
 }
 
 /*====================RESPONSIVE MEDIA QUERIES==========================================================================================*/
-@media screen and (max-width: 1024px) {
-  /* Header */
-  header {
-    min-height: 12vh;
-  }
-
-  nav ul {
-    font-size: 1.4rem;
-    gap: 3rem;
-  }
-
-  /* Box Text */
-  #boxText {
-    max-width: 80%;
-    padding: 1.5rem;
-  }
-
-  #boxText h1,
-  #boxText h2 {
-    font-size: 2.2rem;
-  }
-
-  #boxText p {
-    font-size: 1.1rem;
-  }
-
-  /* Footer */
-  footer {
-    font-size: 1.8rem;
-  }
-
-  .footer-container {
-    flex-direction: column;
-  }
-}
-
 @media screen and (max-width: 768px) {
-  /* Header */
-  header {
-    min-height: 10vh;
+  .footer-container {
+    flex-direction: row; /* Håll dem i rad istället för kolumn */
+    justify-content: center; /* Centrera ikonerna */
   }
 
-  nav ul {
-    font-size: 1.2rem;
-    gap: 2rem;
-  }
-
-  /* Box Text */
-  #boxText {
-    max-width: 90%;
-    padding: 1rem;
-  }
-
-  #boxText h1,
-  #boxText h2 {
-    font-size: 2rem;
-  }
-
-  #boxText p {
-    font-size: 1rem;
-  }
-
-  /* Footer */
-  footer {
-    font-size: 1.6rem;
+  .icon-container {
+    flex: 1 1 50px; /* Mindre utrymme på mobiler */
+    max-width: 50px; /* Sätt max-bredd för ikoner */
   }
 }
 
 @media screen and (max-width: 480px) {
-  /* Header */
-  header {
-    min-height: 8vh;
+  .footer-container {
+    flex-direction: row; /* Håll dem i rad */
+    justify-content: center; /* Centrera ikonerna */
   }
 
-  nav ul {
-    font-size: 1rem;
-    gap: 1.5rem;
-  }
-
-  /* Box Text */
-  #boxText {
-    max-width: 100%;
-    padding: 0.5rem;
-  }
-
-  #boxText h1,
-  #boxText h2 {
-    font-size: 1.8rem;
-  }
-
-  #boxText p {
-    font-size: 0.9rem;
-  }
-
-  /* Footer */
-  footer {
-    font-size: 1.4rem;
+  .icon-container {
+    flex: 1 1 40px; /* Ytterligare minska utrymmet */
+    max-width: 40px; /* Sätt max-bredd för ikoner */
   }
 }
 
+/*====================Hangman Game==========================================================================================*/
 #hangman-game {
   display: none;
   position: fixed;
