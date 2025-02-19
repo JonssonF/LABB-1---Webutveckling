@@ -17,6 +17,7 @@ body {
 header {
   min-height: 15vh;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   background-image: linear-gradient(rgb(255, 255, 255), #de9829);
