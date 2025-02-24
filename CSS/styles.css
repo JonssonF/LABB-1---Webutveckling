@@ -412,10 +412,6 @@ footer {
     flex-wrap: wrap;
     gap: 0;
   }
-  nav ul {
-    font-size: 1.2rem;
-    gap: 2rem;
-  }
 
   nav ul li {
     font-size: 1rem;
@@ -425,8 +421,7 @@ footer {
   }
 
   .current-page {
-    font-size: 1rem;
-    position: relative;
+    display: none;
   }
   #boxText p {
     font-size: 1.2rem;
@@ -455,21 +450,17 @@ footer {
     max-width: 50px;
     gap: 0;
   }
-  nav ul {
-    font-size: 1rem;
-    gap: 1rem;
-  }
-
   nav ul li {
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
     font-size: 0.9rem;
+    margin: 0px;
+    padding: -10px;
   }
 
   .current-page {
-    font-size: 1rem;
-    position: relative;
+    display: none;
   }
   #boxText p {
     font-size: 0.9rem;
