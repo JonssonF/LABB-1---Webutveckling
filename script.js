@@ -30,6 +30,54 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch((error) => console.error("Error loading JSON:", error));
   }
-
   loadCV();
+
+  function loadRepo() {
+    const container = document.querySelector(".portfolio");
+    const loading = document.getElementById("loading");
+    const boxText = document.getElementById("boxText");
+
+    boxText.classList.add("hidden");
+    loading.classList.add("active");
+    container.innerHTML = "";
+
+    fetch("https://api.github.com/users/JonssonF/repos")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Could not reach repos.");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        loading.classList.remove("active");
+
+        if (data.length > 0) {
+          boxText.classList.remove("hidden");
+
+          data.forEach((repo) => {
+            const projectDiv = document.createElement("div");
+            projectDiv.classList.add("project");
+
+            projectDiv.innerHTML = `
+          <h3>.::${repo.name}::.</h3>
+            <p>${repo.description || "No description available."}</p>
+            <a href="${repo.html_url}" target="_blank">Visit project</a>
+            <br>
+          `;
+
+            container.appendChild(projectDiv);
+          });
+        } else {
+          const noRepoMessage = document.createElement("p");
+          noRepoMessage.textContent = "No repositories found.";
+          container.appendChild(noRepoMessage);
+        }
+      })
+      .catch((error) => {
+        loading.classList.remove("active");
+        loading.classList.remove("hidden");
+        console.error("Error loading GitHub repositories.", error);
+      });
+  }
+  loadRepo();
 });
