@@ -1,82 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const word = "RICK"; // Ordet spelaren ska gissa
-  let guessedLetters = [];
-  let wrongGuesses = 0;
-  const maxWrong = 6;
+  // Funktion för att ladda CV-data
+  function loadCV() {
+    fetch("experiences.json")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        const container = document.querySelector(".cv1");
 
-  const hangmanBtn = document.getElementById("hangman-btn");
-  const hangmanGame = document.getElementById("hangman-game");
-  const wordDisplay = document.getElementById("word-display");
-  const guessInput = document.getElementById("guess");
-  const wrongGuessesDisplay = document.getElementById("wrong-guesses");
-  const wrongLettersDisplay = document.getElementById("wrong-letters-display");
-  const message = document.getElementById("message");
-  // -count
-  // Starta spelet
-  hangmanBtn.addEventListener("click", function () {
-    hangmanGame.style.display = "block";
-    guessedLetters = [];
-    wrongGuesses = 0;
-    updateDisplay();
-  });
+        data.forEach((item) => {
+          const projectDiv = document.createElement("div");
+          projectDiv.classList.add("project");
 
-  // Kollar bokstaven
-  window.checkLetter = function () {
-    let letter = guessInput.value.toUpperCase();
-    guessInput.value = ""; // Rensa input-fältet
-    message.textContent = "";
-    if (!letter.match(/[A-Z]/) || letter.length !== 1) {
-      message.textContent = "Only 1 letter, A-Z!";
-      return;
-    }
+          projectDiv.innerHTML = `
+          <a href="#${item.id}">
+            <img src="${item.image}" alt="${item.alt}" />
+          </a>
+          <div class="modal" id="${item.id}">
+            <div class="modal-content">
+              <a href="#" class="close-btn">&times;</a>
+              <h4>${item.title}</h4>
+              <p>${item.description}</p>
+              <a href="${item.link}" target="_blank">Visit website</a>
+            </div>
+          </div>
+        `;
 
-    if (guessedLetters.includes(letter)) {
-      message.textContent = "Already guessed on that one!";
-      return;
-    }
-
-    guessedLetters.push(letter);
-
-    if (word.includes(letter)) {
-      message.textContent = "Good guess!";
-    } else {
-      wrongGuesses++;
-      message.textContent = "Wrong guess!";
-      wrongGuessesDisplay.textContent = wrongGuesses;
-      wrongLettersDisplay.textContent += letter + " ";
-    }
-
-    updateDisplay();
-  };
-
-  function updateDisplay() {
-    wordDisplay.textContent = word
-      .split("")
-      .map((letter) => (guessedLetters.includes(letter) ? letter : "_"))
-      .join(" ");
-
-    if (!wordDisplay.textContent.includes("_")) {
-      message.textContent = "You won!";
-      setTimeout(playRickroll, 1000); // Spela låten efter 1 sek
-    }
-
-    if (wrongGuesses >= maxWrong) {
-      message.textContent = "Game Over!";
-      wordDisplay.textContent = word; // Visa hela ordet
-      gameOver = true;
-      quitGame();
-    }
+          container.appendChild(projectDiv);
+        });
+      })
+      .catch((error) => console.error("Error loading JSON:", error));
   }
 
-  function playRickroll() {
-    window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-  }
-
-  function quitGame() {
-    hangmanGame.style.display = "none";
-  }
-  // Stäng spelet
-  window.closeGame = function () {
-    hangmanGame.style.display = "none";
-  };
+  loadCV();
 });

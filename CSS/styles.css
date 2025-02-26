@@ -2,6 +2,8 @@
   margin: 0px;
   padding: 0px;
   border: 0px;
+  /* width: 100%;
+  overflow-x: hidden; */
 }
 /*====================BODY==========================================================================================*/
 body {
@@ -18,7 +20,6 @@ body {
 /*====================HEAD==========================================================================================*/
 header {
   min-height: 15vh;
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -27,22 +28,21 @@ header {
   border-top: 4px solid white;
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 a {
   text-decoration: none;
   color: rgb(143, 0, 0);
 }
+
 header nav ul {
-  width: 100%;
-  height: 10vh;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  text-decoration: none;
+  gap: 5rem;
   font-size: 1.5rem;
   font-weight: 500;
   font-family: Orbitron, sans-serif;
@@ -56,48 +56,24 @@ nav ul li {
   -o-transition: all 0.25s ease;
 }
 
-nav ul li a.focused {
+nav ul li a.active {
   font-size: 1.7rem;
   text-decoration: underline;
   font-weight: 600;
   color: #eeff00;
+  outline: none;
+}
+
+nav ul li a.active {
+  transition: all 0.3s ease-in-out;
 }
 
 nav ul li:hover {
-  color: #f9f9f9;
   transform: scale(1.5);
   -webkit-transform: scale(1.5);
   -moz-transform: scale(1.5);
   -ms-transform: scale(1.5);
   -o-transform: scale(1.5);
-}
-
-.current-page {
-  flex: auto;
-  flex-wrap: wrap;
-  position: absolute;
-  top: 9vh;
-  left: 2rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #ffcc00;
-  font-family: Orbitron, sans-serif;
-  text-align: center;
-}
-
-.current-page img {
-  display: block;
-  margin: 0 auto 0;
-  max-width: 50px;
-  height: auto;
-}
-
-#current-page {
-  font-size: 1.5rem;
-}
-
-.current-page:hover #current-page {
-  color: #eeff00;
 }
 /*====================ASIDE==========================================================================================*/
 
@@ -107,7 +83,7 @@ main {
   min-height: 64vh;
   min-width: 50vh;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -123,26 +99,14 @@ main #cv {
 }
 /*====================MAIN / MODAL / CV Section======================================================================*/
 .project img {
-  width: 100%;
-  height: auto;
   max-width: 250px;
-  border-radius: 10px;
-  cursor: pointer;
-  display: flex;
-  justify-content: row;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
 }
 
-.cv {
+.cv1 {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Två kolumner */
-  gap: 1rem;
-  justify-items: center;
-  max-width: 500px; /* Justera bredden efter behov */
-  margin: 0 auto;
+  gap: 2rem;
+  /* Justera bredden efter behov */
 }
 
 .project a {
@@ -167,14 +131,6 @@ main #cv {
 }
 
 .modal-content {
-  /* background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  max-width: 500px;
-  text-align: center;
-  position: relative;
-  overflow: hidden; */
-
   max-width: 65rem;
   text-align: center;
   background: rgba(255, 255, 255, 0.8);
@@ -223,7 +179,7 @@ main #cv {
 }
 /*====================MAIN BOX SECTION==========================================================================================*/
 #boxText {
-  max-width: 65rem;
+  max-width: 60rem;
   text-align: center;
   background: rgba(255, 255, 255, 0.8);
   padding: 2rem;
@@ -396,74 +352,63 @@ footer {
   .footer-container {
     flex-direction: row; /* Håll dem i rad istället för kolumn */
     justify-content: center; /* Centrera ikonerna */
-    font-size: 1.2rem;
-  }
-
-  .icon-container {
-    flex: 1 1 50px;
-    max-width: 50px;
   }
 
   header nav ul {
-    flex: row;
-    gap: 1rem;
+    font-size: 1.2rem;
+    gap: 2rem;
   }
 
-  .header,
-  a {
-    font-size: 1.2rem;
+  .icon-container {
+    flex: 1 1 50px; /* Mindre utrymme på mobiler */
+    max-width: 50px;
   }
 
-  .current-page {
-    display: none;
+  .icon-container i {
+    font-size: 36px;
   }
-  #boxText p {
-    font-size: 1.2rem;
+
+  .project img {
+    max-width: 180px;
   }
-  #boxText h1 {
-    font-size: 1.2rem !important;
-  }
-  #boxText li {
-    font-size: 1rem !important;
+
+  .cv1 {
+    grid-template-columns: repeat(2, 1fr);
   }
   #copy {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 }
 
 @media screen and (max-width: 480px) {
   .footer-container {
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: row; /* Håll dem i rad */
+    justify-content: center; /* Centrera ikonerna */
+  }
+
+  header nav ul {
     font-size: 1rem;
+    gap: 1rem;
   }
 
   .icon-container {
-    flex: 1 1 40px;
-    max-width: 40px;
+    flex: 1 1 40px; /* Ytterligare minska utrymmet */
+    max-width: 40px; /* Sätt max-bredd för ikoner */
   }
-  header nav ul {
-    flex: column;
-    gap: 0.2rem;
+
+  .icon-container i {
+    font-size: 24px;
   }
-  .header,
-  a {
-    font-size: 1rem;
+
+  .project img {
+    max-width: 150px;
   }
-  .current-page {
-    display: none;
+  .cv1 {
+    grid-template-columns: repeat(2, 1fr);
   }
-  #boxText p {
-    font-size: 0.9rem;
-  }
-  #boxText li {
-    font-size: 1rem !important;
-  }
-  #boxText h1 {
-    font-size: 0.9rem !important;
-  }
+
   #copy {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
 

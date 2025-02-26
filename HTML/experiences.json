@@ -1,0 +1,50 @@
+[
+  {
+    "id": "modal-4",
+    "image": "../IMG/björkäng.png",
+    "alt": "Motel Björkäng",
+    "title": "Motel Björkäng",
+    "description": "This is where I started my professional career. I began working in the dishwashing area, then moved on to managing the salad bar, and eventually started working in the kitchen while studying in the Hotel and Restaurant Management program.",
+    "link": "https://www.bjorkangvagkrog.se/"
+  },
+  {
+    "id": "modal-1",
+    "image": "../IMG/Högfjällshotellet.png",
+    "alt": "Högfjällshotellet",
+    "title": "Högfjällshotellet",
+    "description": "Here, I worked as a chef on the winters between 2009-2011. My responsibilities included ala carte, conferences with events in Sami huts, with snowmobile transport.",
+    "link": "https://www.hogis.se/"
+  },
+  {
+    "id": "modal-2",
+    "image": "../IMG/Skansen.png",
+    "alt": "Hotel Skansen",
+    "title": "Hotel Skansen",
+    "description": "Here, I worked as a chef on the summers between 2010-2011. My responsibilities included ala carte, weddings, and conferences.",
+    "link": "https://hotelskansen.se/mat-dryck/"
+  },
+  {
+    "id": "modal-3",
+    "image": "../IMG/NH5.png",
+    "alt": "Norra Hamnen 5",
+    "title": "Norra Hamnen 5",
+    "description": "Here, I worked as the sous chef and later as the head chef. My responsibilities included menu planning, inventory management, and staff coordination. 2012-2017.",
+    "link": "https://www.norrahamnen5.se/"
+  },
+  {
+    "id": "modal-5",
+    "image": "../IMG/prästgatan.png",
+    "alt": "Prästgatan",
+    "title": "Prästgatan",
+    "description": "Here, I worked as a chef after moving back home, serving lunch and handling occasional evening events. We also organized cooking classes for small groups. 2017-2018.",
+    "link": "https://www.prastgatan.se/"
+  },
+  {
+    "id": "modal-6",
+    "image": "../IMG/NP.Bemanning.png",
+    "alt": "NP.Bemanning",
+    "title": "NP.Bemanning",
+    "description": "The feeling of being stuck without growth made me want to try something new. Since 2018, I have been working as a carpenter, where I have earned my professional certification.",
+    "link": "https://www.etikhus.se/tarnan/"
+  }
+]
