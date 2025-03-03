@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Funktion för att ladda CV-data
+  // Function to load CV-data-----------------------------------------------------------
   function loadCV() {
-    fetch("experiences.json")
+    fetch("/html/experiences.json")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((error) => console.error("Error loading JSON:", error));
   }
   loadCV();
-
+  //  Function to load repositories from GitHub------------------------------------------------
   function loadRepo() {
     const container = document.querySelector(".portfolio");
     const loading = document.getElementById("loading");

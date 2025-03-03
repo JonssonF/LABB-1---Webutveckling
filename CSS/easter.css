@@ -7,10 +7,8 @@
 body {
   height: 100vh;
   width: 100%;
-  background-image: url("../IMG/background.jpg");
+  background-image: url("../IMG/matrix.jpg");
   background-size: cover;
-  flex: auto;
-  flex-wrap: wrap;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -20,18 +18,21 @@ body {
 header {
   min-height: 15vh;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(rgb(255, 255, 255), #de9829);
-  background-size: cover;
-  border-top: 4px solid white;
+  background: linear-gradient(rgba(0, 255, 0, 0.7), rgba(0, 255, 0, 0.5));
+  border-top: 4px solid #00ff00;
   width: 100%;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: glow 1.5s infinite alternate;
 }
 
 a {
   text-decoration: none;
-  color: rgb(143, 0, 0);
+  color: rgb(0, 0, 0);
+  text-shadow: 5px 5px #00ff00;
 }
 
 header nav ul {
@@ -73,143 +74,20 @@ nav ul li:hover {
   -ms-transform: scale(1.5);
   -o-transform: scale(1.5);
 }
-/*====================ASIDE==========================================================================================*/
 
 /*====================MAIN==========================================================================================*/
 main {
   position: relative;
   min-height: 64vh;
-  min-width: 50vh;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   z-index: 1;
 }
 
-main #cv {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  margin: 2rem;
-}
-
-/*====================LOADING IN PORTFOLIO==========================================================================================*/
-
-#loading {
-  display: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: fixed;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  z-index: 1000;
-  font-size: 2.5rem;
-  color: rgb(143, 0, 0);
-  font-family: Orbitron, sans-serif;
-  font-weight: 600;
-}
-
-#loading.active {
-  display: block;
-}
-
-.hidden {
-  display: none;
-}
-/*====================MAIN / MODAL / CV Section======================================================================*/
-.project img {
-  max-width: 250px;
-}
-
-.cv1 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Två kolumner */
-  gap: 2rem;
-  /* Justera bredden efter behov */
-}
-
-.project a {
-  display: block;
-}
-
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  justify-content: center;
-  align-items: center;
-}
-
-/* Show modal when target is clicked */
-.modal:target {
-  display: flex;
-}
-
-.modal-content {
-  max-width: 65rem;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  font-family: Orbitron, sans-serif;
-  overflow: hidden;
-  position: relative;
-  transition: all 0.3s ease-in-out;
-}
-
-.modal-content p {
-  font-size: 1.2rem;
-  color: black;
-  margin-bottom: 0.8rem;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 2rem;
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.close-btn:hover {
-  color: red;
-}
-
-/* Modal fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.modal-content {
-  animation: fadeIn 0.3s ease-in-out;
-}
 /*====================MAIN BOX SECTION==========================================================================================*/
-
-#faceContainer {
-  display: none;
-}
-
 #boxText {
+  position: relative;
   max-width: 60rem;
   text-align: center;
   background: rgba(255, 255, 255, 0.8);
@@ -219,34 +97,22 @@ main #cv {
   font-family: Orbitron, sans-serif;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
-}
-#boxText img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 #boxText h1,
 h2 {
   font-size: 2.5rem;
-  color: rgb(143, 0, 0);
+  color: rgb(0, 255, 42);
+  text-shadow: 5px 5px #000;
   margin-bottom: 1rem;
-}
-
-#boxText ul li {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin: 1rem;
-  align-items: center;
-  gap: 1rem;
-}
-#boxText ul li {
-  font-size: 20px;
 }
 
 #boxText p {
@@ -258,14 +124,10 @@ h2 {
   background: rgba(255, 255, 255, 1);
 }
 
-#boxText img:hover {
-  opacity: 0.8;
-}
-
 /*====================FOOTER==========================================================================================*/
 footer {
   min-height: 15vh;
-  color: rgb(143, 0, 0);
+  color: rgb(0, 0, 0);
   font-size: 2rem;
   font-family: Orbitron, sans-serif;
   font-weight: 500;
@@ -280,9 +142,9 @@ footer {
   justify-content: center;
   align-items: center;
   height: 20vh;
-  background-image: linear-gradient(#de9829, rgb(255, 255, 255));
-  border-bottom: 4px solid white;
+  background: linear-gradient(rgba(0, 255, 0, 0.7), rgba(0, 255, 0, 0.5));
   width: 100%;
+  border-bottom: 4px solid #00ff00;
 }
 .footer-container {
   width: 100%;
@@ -294,15 +156,15 @@ footer {
   margin-top: -2rem;
 }
 .icon-container {
-  margin: 0.5rem; /* Lite avstånd mellan ikonerna */
-  flex: 1 1 60px; /* Gör ikonerna responsiva */
-  max-width: 60px; /* Sätt en max-bredd för ikonerna */
+  margin: 0.5rem;
+  flex: 1 1 60px;
+  max-width: 60px;
 }
 .fa-brands {
   margin: 1rem 1rem 1rem 1rem;
   font-size: 3rem;
   text-decoration: none;
-  color: rgb(143, 0, 0);
+  color: rgb(0, 0, 0);
   transition: transform 0.25s;
 }
 .fa-brands:hover {
@@ -369,7 +231,7 @@ footer {
 
 .fa-brands {
   font-size: 3rem;
-  color: rgb(143, 0, 0);
+  color: rgb(0, 0, 0);
   transition: transform 0.3s ease;
 }
 
@@ -443,84 +305,19 @@ footer {
   }
 }
 
-/*====================Hangman Game==========================================================================================*/
-#hangman-game {
-  display: none;
-  position: fixed;
-  min-height: 15rem;
-  min-width: 35rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.555);
-  padding: 20px;
-  border: 6px solid black;
-  text-align: center;
-  opacity: 1;
-  z-index: 100;
-}
-
-#hangman-btn {
-  opacity: 0;
-  transition: all opacity 0.3s;
-}
-#hangman-btn:hover {
-  opacity: 1;
-}
-
-.input-container {
-  border-radius: 5px; /* Rundade hörn */
-  padding: 10px; /* Utrymme inuti rutan */
-  margin-bottom: 10px; /* Utrymme under rutan */
-  display: inline-block; /* Gör rutan inline så att den kan centreras om det behövs */
-  font-family: Orbitron, sans-serif;
-  font-weight: 500;
-}
-
-input[type="text"] {
-  width: 50px; /* Gör fältet smalare för en bokstav */
-  padding: 5px; /* Lägg till padding för bättre utrymme */
-  border: 1px solid #333; /* Lägger till en synlig kant på inputfältet */
-  border-radius: 3px; /* Rundade hörn på inputfältet */
-  font-size: 16px; /* Större text */
-  margin-top: 5px; /* Utrymme ovanför inputfältet */
-  background-color: #f9f9f9; /* Bakgrundsfärg på inputfältet */
-}
-
-input[type="text"]:focus {
-  outline: none; /* Ta bort standard kontur */
-  border-color: #007bff; /* Ändra kantfärg när inputfältet är i fokus */
-}
-
-.styled-button {
-  background-color: white; /* Bakgrundsfärg */
-  font-family: Orbitron, sans-serif;
-  color: rgb(143, 0, 0); /* Textfärg */
-  font-size: 25px !important;
-  border-radius: 5px; /* Rundade hörn */
-  padding: 10px 15px; /* Utrymme inuti knappen */
-  font-size: 16px; /* Textstorlek */
-  cursor: pointer; /* Ändra muspekaren när man hovrar över knappen */
-  transition: background-color 0.3s; /* Mjuk övergång för bakgrundsfärgen */
-}
-
-.styled-button:hover {
-  background-color: rgb(212, 19, 19);
-}
 /*====================Theme Switcher==========================================================================================*/
 #theOne {
   display: none;
   position: fixed;
   bottom: 10px;
   right: 10px;
-  background-color: #ff5733;
-  color: white;
+  background-color: #00ff00;
+  color: black;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  z-index: 1000; /* Se till att den ligger ovanpå andra element */
+  z-index: 1000;
 }
-
 #easterContainer1 {
   position: fixed;
   bottom: 10px;
@@ -535,4 +332,167 @@ input[type="text"]:focus {
 
 #easterContainer1:hover #theOne {
   display: block;
+}
+
+/*====================Sliding glasses==========================================================================================*/
+
+#boxText img {
+  flex: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#faceContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30vw;
+  max-width: 300px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+#selfie {
+  position: absolute;
+  width: 341%;
+  transform: translate(-35%, -40%);
+  z-index: 5;
+  -webkit-transform: translate(-35%, -40%);
+  -moz-transform: translate(-35%, -40%);
+  -ms-transform: translate(-35%, -40%);
+  -o-transform: translate(-35%, -40%);
+}
+
+#glasses {
+  position: absolute;
+  width: 95%;
+  transform: translate(-2%, -30%);
+  -webkit-transform: translate(-2%, -30%);
+  -moz-transform: translate(-2%, -30%);
+  -ms-transform: translate(-2%, -30%);
+  -o-transform: translate(-2%, -30%);
+  z-index: 6;
+  animation: slideglasses 3s ease-out forwards;
+  -webkit-animation: slideglasses 3s ease-out forwards;
+}
+
+#pipa {
+  position: absolute;
+  width: 60%;
+  transform: translate(80%, 50%);
+  -webkit-transform: translate(80%, 50%);
+  -moz-transform: translate(80%, 50%);
+  -ms-transform: translate(80%, 50%);
+  -o-transform: translate(80%, 50%);
+  z-index: 6;
+  animation: slidepipe 3s ease-out forwards;
+  -webkit-animation: slidepipe 3s ease-out forwards;
+}
+
+@keyframes slideglasses {
+  0% {
+    transform: translateX(-300%);
+    -webkit-transform: translateX(-300%);
+    -moz-transform: translateX(-300%);
+    -ms-transform: translateX(-300%);
+    -o-transform: translateX(-300%);
+  }
+  100% {
+    transform: translate(-2%, -30%);
+    -webkit-transform: translate(-2%, -30%);
+    -moz-transform: translate(-2%, -30%);
+    -ms-transform: translate(-2%, -30%);
+    -o-transform: translate(-2%, -30%);
+  }
+}
+
+@keyframes slidepipe {
+  0% {
+    transform: translateX(500%);
+    -webkit-transform: translateX(500%);
+    -moz-transform: translateX(500%);
+    -ms-transform: translateX(500%);
+    -o-transform: translateX(500%);
+  }
+  100% {
+    transform: translate(78%, 45%);
+
+    -webkit-transform: translate(78%, 45%);
+    -moz-transform: translate(78%, 45%);
+    -ms-transform: translate(78%, 45%);
+    -o-transform: translate(78%, 45%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #faceContainer {
+    width: 60vw;
+    max-width: 250px;
+  }
+
+  #selfie {
+    width: 180%;
+    transform: translate(-40%, -50%);
+  }
+
+  #glasses {
+    width: 85%;
+    transform: translate(-5%, -25%);
+  }
+
+  #pipa {
+    width: 50%;
+    transform: translate(75%, 40%);
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  #faceContainer {
+    width: 50vw;
+    max-width: 300px;
+  }
+
+  #selfie {
+    width: 250%;
+    transform: translate(-30%, -40%);
+  }
+
+  #glasses {
+    width: 90%;
+    transform: translate(-3%, -25%);
+  }
+
+  #pipa {
+    width: 55%;
+    transform: translate(70%, 45%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #faceContainer {
+    width: 80vw;
+    max-width: 250px;
+  }
+
+  #selfie {
+    width: 150%;
+    transform: translate(-40%, -50%);
+  }
+
+  #glasses {
+    width: 80%;
+    transform: translate(-5%, -25%);
+  }
+
+  #pipa {
+    width: 40%;
+    transform: translate(75%, 45%);
+  }
 }

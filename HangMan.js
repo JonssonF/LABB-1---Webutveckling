@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (wrongGuesses >= maxWrong) {
       message.textContent = "Game Over!";
       wordDisplay.textContent = word; // Visa hela ordet
-      quitGame();
+      setTimeout(quitGame, 2000);
     }
   }
   //Makes sure it opens in a new window.

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - Fredrik Jonsson</title>
-    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel='stylesheet' href="./CSS/styles.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
     </style>
@@ -35,8 +35,8 @@
           <p>This website is part of my coursework, where I will showcase my <strong>CV, portfolio, and a little about myself</strong>.</p>
           <p>Feel free to explore and get to know more about me and my work!</p>
       </section>
-      
-      </section>
+    
+    </section>
     </main>
     <footer id="footer">
       <div class="footer-container">
@@ -82,12 +82,10 @@
           <span class="tooltip"
             ><img src="./IMG/snapcodeFJ.jpg" alt="SnapCode" />Add me on
             SnapChat</span
-          >
+            >
+          </div>
         </div>
-      </div>
-      <p id="copy">&copy; <time datetime="2025">2025</time> Fredrik Jonsson</p>
-      
-      
+        <p id="copy">&copy; <time datetime="2025">2025</time> Fredrik Jonsson</p>       
       <!-- WEASTER -->
       <button id="hangman-btn">Dont u dare press this button.</button>
       <div id="hangman-game" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 2px solid black;">
@@ -96,15 +94,15 @@
         <div class="input-container">
           <label for="guess">Guess a letter:</label>
           <input type="text" id="guess" maxlength="1" placeholder="Skriv en bokstav" required>
-      </div>
-      <button class="styled-button" onclick="checkLetter()">Guess</button>
-      <p id="message"></p>
-      <p>Wrong guesses: <span id="wrong-guesses">0</span>/6</p>
-      <p id="wrong-letters"></p>
-      <button class="styled-button" onclick="closeGame()">Close</button>
         </div>
+        <button class="styled-button" onclick="checkLetter()">Guess</button>
+        <p id="message"></p>
+        <p>Wrong guesses: <span id="wrong-guesses">0</span>/6</p>
+        <p id="wrong-letters"></p>
+        <button class="styled-button" onclick="closeGame()">Close</button>
+      </div>
       </div>
     </footer>
-    <script src="HangMan.js"></script>
+    <script src="HangMan.js"></script>   
   </body>
 </html>
