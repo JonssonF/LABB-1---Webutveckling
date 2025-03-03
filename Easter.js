@@ -12,17 +12,14 @@ document.addEventListener("DOMContentLoaded", function () {
     faceContainer.id = "faceContainer";
 
     const faceImage = document.createElement("img");
-    faceImage.src = "./IMG/face.jpg";
     faceImage.id = "selfie";
     faceContainer.appendChild(faceImage);
 
     const glassesImage = document.createElement("img");
-    glassesImage.src = "./IMG/glasses.png";
     glassesImage.id = "glasses";
     faceContainer.appendChild(glassesImage);
 
     const pipeImage = document.createElement("img");
-    pipeImage.src = "./IMG/pipa.png";
     pipeImage.id = "pipa";
     faceContainer.appendChild(pipeImage);
 
