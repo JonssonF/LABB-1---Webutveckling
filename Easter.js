@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const easterButton = document.getElementById("theOne");
   const link = document.querySelector("link[rel='stylesheet']");
-  const hoverContainer1 = document.getElementById("easterContainer1");
+  const easterContainer1 = document.getElementById("easterContainer1");
 
   if (localStorage.getItem("theme") === "theOne") {
     link.setAttribute("href", "../CSS/easter.css");
