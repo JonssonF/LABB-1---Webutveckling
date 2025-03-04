@@ -1,7 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Function to load CV-data-----------------------------------------------------------
-  function loadCV() {
-    fetch("/html/experiences.json")
+
+  //Plugga koden mera och lägg till async och await
+
+  /*async*/ function loadCV() {
+    /*await*/ fetch("/html/experiences.json")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -10,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         data.forEach((item) => {
           const projectDiv = document.createElement("div");
           projectDiv.classList.add("project");
-
+          console.log("NU ÄR VI HÄR TJOHO");
           projectDiv.innerHTML = `
           <a href="#${item.id}">
             <img src="${item.image}" alt="${item.alt}" />
