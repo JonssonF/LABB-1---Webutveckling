@@ -28,13 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
     link.setAttribute("href", "../CSS/styles.css");
   }
 
-  easterContainer1.addEventListener("mouseenter", function () {
-    easterButton.style.display = "block";
-  });
+  // easterContainer1.addEventListener("mouseenter", function () {
+  //   easterButton.style.display = "block";
+  // });
 
-  easterContainer1.addEventListener("mouseleave", function () {
-    easterButton.style.display = "none";
-  });
+  // easterContainer1.addEventListener("mouseleave", function () {
+  //   easterButton.style.display = "none";
+  // });
 
   easterButton.addEventListener("click", function () {
     console.log("Button clicked");

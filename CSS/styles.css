@@ -444,6 +444,7 @@ footer {
 }
 
 /*====================Hangman Game==========================================================================================*/
+/* Spelets container */
 #hangman-game {
   display: none;
   position: fixed;
@@ -452,87 +453,124 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.555);
+  background: rgba(
+    255,
+    255,
+    255,
+    0.95
+  ); /* Lägger till högre opacitet för bättre synlighet */
   padding: 20px;
   border: 6px solid black;
   text-align: center;
   opacity: 1;
   z-index: 100;
+  border-radius: 10px; /* Lägger till rundade hörn på spelet */
 }
 
 #hangman-btn {
-  opacity: 0;
-  transition: all opacity 0.3s;
-}
-#hangman-btn:hover {
-  opacity: 1;
-}
-
-.input-container {
-  border-radius: 5px; /* Rundade hörn */
-  padding: 10px; /* Utrymme inuti rutan */
-  margin-bottom: 10px; /* Utrymme under rutan */
-  display: inline-block; /* Gör rutan inline så att den kan centreras om det behövs */
-  font-family: Orbitron, sans-serif;
-  font-weight: 500;
-}
-
-input[type="text"] {
-  width: 50px; /* Gör fältet smalare för en bokstav */
-  padding: 5px; /* Lägg till padding för bättre utrymme */
-  border: 1px solid #333; /* Lägger till en synlig kant på inputfältet */
-  border-radius: 3px; /* Rundade hörn på inputfältet */
-  font-size: 16px; /* Större text */
+  width: 70px; /* Gör fältet smalare för en bokstav */
+  padding: 8px; /* Lägg till padding för bättre utrymme */
+  border: 2px solid #333; /* Lägger till en synlig kant på inputfältet */
+  border-radius: 5px; /* Rundade hörn på inputfältet */
+  font-size: 18px; /* Större text */
   margin-top: 5px; /* Utrymme ovanför inputfältet */
   background-color: #f9f9f9; /* Bakgrundsfärg på inputfältet */
+  transition: border-color 0.3s ease; /* Mjuk övergång när kantfärgen ändras */
 }
 
-input[type="text"]:focus {
+#hangman-btn:hover {
+  outline: none; /* Ta bort standard kontur */
+  border-color: red; /* Ändra kantfärg när inputfältet är i fokus */
+}
+/* Gissningsfält (input) */
+#guess {
+  width: 50px; /* Gör fältet smalare för en bokstav */
+  padding: 8px; /* Lägg till padding för bättre utrymme */
+  border: 2px solid #333; /* Lägger till en synlig kant på inputfältet */
+  border-radius: 5px; /* Rundade hörn på inputfältet */
+  font-size: 18px; /* Större text */
+  margin-top: 5px; /* Utrymme ovanför inputfältet */
+  background-color: #f9f9f9; /* Bakgrundsfärg på inputfältet */
+  transition: border-color 0.3s ease; /* Mjuk övergång när kantfärgen ändras */
+}
+
+#guess:focus {
   outline: none; /* Ta bort standard kontur */
   border-color: #007bff; /* Ändra kantfärg när inputfältet är i fokus */
 }
 
-.styled-button {
-  background-color: white; /* Bakgrundsfärg */
-  font-family: Orbitron, sans-serif;
-  color: rgb(143, 0, 0); /* Textfärg */
-  font-size: 25px !important;
-  border-radius: 5px; /* Rundade hörn */
-  padding: 10px 15px; /* Utrymme inuti knappen */
-  font-size: 16px; /* Textstorlek */
-  cursor: pointer; /* Ändra muspekaren när man hovrar över knappen */
-  transition: background-color 0.3s; /* Mjuk övergång för bakgrundsfärgen */
+/* För att visa ordet */
+#word-display {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
-.styled-button:hover {
-  background-color: rgb(212, 19, 19);
+/* För att visa felaktiga gissningar */
+#wrong-guesses {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: red;
 }
-/*====================Theme Switcher==========================================================================================*/
-#theOne {
-  display: none;
-  position: fixed;
-  bottom: 10px;
+
+/* För att visa de felaktiga bokstäverna */
+#wrong-letters-display {
+  font-size: 1.2rem;
+  color: red;
+  margin-top: 5px;
+}
+
+/* För meddelandet som visas vid vinnande eller förlorande */
+#message {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
   right: 10px;
-  background-color: #ff5733;
-  color: white;
+  font-size: 24px;
+  background: none;
   border: none;
-  padding: 10px 20px;
+  color: black;
   cursor: pointer;
-  z-index: 1000; /* Se till att den ligger ovanpå andra element */
+  font-weight: bold;
+  z-index: 2000; /* Se till att knappen är ovanpå allt annat */
 }
 
-#easterContainer1 {
+.close-btn:hover {
+  color: red; /* Gör knappen röd när den hovras */
+}
+
+/*====================Theme Switcher==========================================================================================*/
+
+#theOne {
+  display: visible;
   position: fixed;
-  bottom: 10px;
-  right: 10px;
-  border: none;
-  padding: 10px 20px;
+  border: 1px solid rgba(255, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+  bottom: 530px;
+  right: 60px;
+  width: 25px;
+  height: 25px;
+  background-color: #ff8f33a8;
   cursor: pointer;
   z-index: 1000;
-  width: 40px;
-  height: 20px;
+  /* transform: translateX(45%) scale(1);
+  -webkit-transform: translateX(45%) scale(1);
+  -moz-transform: translateX(45%) scale(1);
+  -ms-transform: translateX(45%) scale(1);
+  -o-transform: translateX(45%) scale(1); */
 }
 
 #easterContainer1:hover #theOne {
-  display: block;
+  scale: 5;
+  border: 2px solid greenyellow;
+  background-color: greenyellow;
+  box-shadow: 5 5 3px rgba(255, 255, 255, 1);
+  animation: rotateIcons 1s infinite linear;
+  -webkit-animation: rotateIcons 1s infinite linear;
 }

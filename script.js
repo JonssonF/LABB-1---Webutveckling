@@ -1,10 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Function to load CV-data-----------------------------------------------------------
 
-  //Plugga koden mera och lägg till async och await
-
-  /*async*/ function loadCV() {
-    /*await*/ fetch("/html/experiences.json")
+  async function loadCV() {
+    await fetch("/html/experiences.json")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -35,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   loadCV();
   //  Function to load repositories from GitHub------------------------------------------------
-  function loadRepo() {
+  async function loadRepo() {
     const container = document.querySelector(".portfolio");
     const loading = document.getElementById("loading");
     const boxText = document.getElementById("boxText");
@@ -44,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loading.classList.add("active");
     container.innerHTML = "";
 
-    fetch("https://api.github.com/users/JonssonF/repos")
+    await fetch("https://api.github.com/users/JonssonF/repos")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Could not reach repos.");
