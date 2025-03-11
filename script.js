@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Function to load CV-data-----------------------------------------------------------
-
   async function loadCV() {
     await fetch("/HTML/experiences.json")
       .then((response) => response.json())
@@ -13,17 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
           projectDiv.classList.add("project");
           console.log("NU ÄR VI HÄR TJOHO");
           projectDiv.innerHTML = `
-          <a href="#${item.id}">
-            <img src="${item.image}" alt="${item.alt}" />
-          </a>
-          <div class="modal" id="${item.id}">
-            <div class="modal-content">
-              <a href="#" class="close-btn">&times;</a>
-              <h4>${item.title}</h4>
-              <p>${item.description}</p>
-              <a href="${item.link}" target="_blank">Visit website</a>
-            </div>
-          </div>
+        <a href="#${item.id}">
+        <img src="${item.image}" alt="${item.alt}" />
+        </a>
+        <div class="modal" id="${item.id}">
+        <div class="modal-content">
+        <a href="#" class="close-btn">&times;</a>
+        <h4>${item.title}</h4>
+        <p>${item.description}</p>
+        <a href="${item.link}" target="_blank">Visit website</a>
+        </div>
+        </div>
         `;
 
           container.appendChild(projectDiv);
@@ -31,7 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch((error) => console.error("Error loading JSON:", error));
   }
-  loadCV();
+  if (window.location.pathname.includes("cv.html")) {
+    loadCV();
+  }
   //  Function to load repositories from GitHub------------------------------------------------
   async function loadRepo() {
     const container = document.querySelector(".portfolio");
@@ -80,5 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Error loading GitHub repositories.", error);
       });
   }
-  loadRepo();
+
+  if (window.location.pathname.includes("portfolio.html")) {
+    loadRepo();
+  }
 });
