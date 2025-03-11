@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Function to load CV-data-----------------------------------------------------------
 
-  function loadCV() {
-    fetch("/html/experiences.json")
+  async function loadCV() {
+    await fetch("/HTML/experiences.json")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
